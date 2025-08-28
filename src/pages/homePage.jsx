@@ -34,7 +34,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>Welcome to Darken Shop</h1>
+          <h1>Welcome to Darkin Shop</h1>
           <p>Discover amazing products at unbeatable prices</p>
           <div className="hero-buttons">
             <Link to="/products" className="btn btn-primary">
