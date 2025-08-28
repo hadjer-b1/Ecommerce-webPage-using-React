@@ -32,8 +32,12 @@ export default function ProductCard({ product, addToCart }) {
         </div>
         <button
           onClick={() => {
-            addToCart(product, quantity);
-            setQuantity(1);
+            if (addToCart && typeof addToCart === 'function') {
+              addToCart(product, quantity);
+              setQuantity(1);
+            } else {
+              console.error('addToCart is not a function:', addToCart);
+            }
           }}
         >
           Add to Cart

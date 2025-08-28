@@ -30,6 +30,18 @@ export function useCart() {
     });
   };
 
+  const decrementItem = (id) => {
+    removeFromCart(id);
+  };
+
+  const removeLine = (id) => {
+    setCart((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const getCount = () => {
+    return cart.reduce((acc, item) => acc + item.quantity, 0);
+  };
+
   const clearCart = () => {
     setCart([]);
   };
@@ -48,5 +60,15 @@ export function useCart() {
     clearCart();
   };
 
-  return { cart, addToCart, removeFromCart, clearCart, payCart, getTotal };
+  return {
+    cart,
+    addToCart,
+    removeFromCart,
+    decrementItem,
+    removeLine,
+    clearCart,
+    payCart,
+    getTotal,
+    getCount,
+  };
 }
